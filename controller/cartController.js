@@ -62,7 +62,7 @@ export const addToWishlist = async(req, res) => {
             if (isProductFound) {
                 res.status(404).json({message: "Already added to wishlists 😡"})
             }else{
-                user.wishlist.push({product})
+                user.wishlist.push({product, quantity:1})
             }
         }
 
