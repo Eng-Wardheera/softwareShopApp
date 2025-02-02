@@ -15,13 +15,13 @@ export const addToCart = async(req, res) => {
         }else{
             let isProductFound = false
             for (let i = 0; i < user.cart.length; i++) {
-                if (user.cart[i].product._id.equals(productId._id)) {
+                if (user.cart[i].product._id.equals(product._id)) {
                     isProductFound = true;
                 }                
             }
             if (isProductFound) {
                 let produc = user.cart.find(pro => 
-                    pro.product._id.equals(productId._id)
+                    pro.product._id.equals(product._id)
                 )
                 produc.quantity++;
             }else{
