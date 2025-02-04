@@ -20,10 +20,10 @@ export const addToCart = async(req, res) => {
                 }                
             }
             if (isProductFound) {
-                let produc = user.cart.find(pro => 
+                let producttt = user.cart.find(pro=> 
                     pro.product._id.equals(product._id)
                 )
-                produc.quantity++;
+                producttt.quantity++;
             }else{
                 user.cart.push({product, quantity:1})
             }
