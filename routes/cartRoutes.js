@@ -7,5 +7,4 @@ router.route('/').post(addToCarts);
 
 router.route('/add-to-wishlist').post(addToWishlist);
 
-
 export default router;
