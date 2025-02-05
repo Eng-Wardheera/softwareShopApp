@@ -1,7 +1,7 @@
 import Product from "../models/productsModel.js";
 import Users from "../models/userModel.js";
 
-export const addToCart = async(req, res) => {
+export const addToCarts = async(req, res) => {
     try {
         
         const {userId, productId} = req.body;
@@ -76,3 +76,4 @@ export const addToWishlist = async(req, res) => {
         res.status(500).json({ error: e.message })
     }
 }
+

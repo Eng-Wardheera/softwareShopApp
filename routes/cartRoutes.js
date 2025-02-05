@@ -1,9 +1,9 @@
 import express from 'express';
-import { addToCart, addToWishlist } from '../controller/cartController.js';
+import { addToCarts, addToWishlist } from '../controller/cartController.js';
 
 const router = express.Router();
 
-router.route('/').post(addToCart);
+router.route('/').post(addToCarts);
 
 router.route('/add-to-wishlist').post(addToWishlist);
 
