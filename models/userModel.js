@@ -28,7 +28,7 @@ const userSchema = mongoose.Schema({
     },
     cart: [
         {
-            productt: {
+            product: {
                 type: mongoose.Schema.Types.ObjectId,
                 required: true,
                 ref: 'products'
@@ -41,7 +41,7 @@ const userSchema = mongoose.Schema({
     ],
     wishlist: [
         {
-            productt: {
+            product: {
                 type: mongoose.Schema.Types.ObjectId,
                 required: true,
                 ref: 'products'

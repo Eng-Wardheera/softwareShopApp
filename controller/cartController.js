@@ -8,7 +8,7 @@ export const addToCarts = async(req, res) => {
 
         const product = await Product.findById(productId);
 
-        let user = await Users.findById(userId).populate("cart.productt").populate("wishlist.productt");
+        let user = await Users.findById(userId).populate("cart.product").populate("wishlist.product");
 
         if (user.cart.length == 0) {
             user.cart.push({product, quantity:1})
@@ -48,7 +48,7 @@ export const addToWishlist = async(req, res) => {
 
         const product = await Product.findById(productId);
 
-        let user = await Users.findById(userId).populate("cart.productt").populate("wishlist.productt");
+        let user = await Users.findById(userId).populate("cart.product").populate("wishlist.product");
 
         if (user.wishlist.length == 0) {
             user.wishlist.push({product})
