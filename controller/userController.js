@@ -22,7 +22,7 @@ export const getUserById = async(req, res)=>{
 
 export const createUser = async(req, res)=>{
    try {
-    const {name, email, password, phone, address} = req.body;
+    const {name, email, password, phone, address, image} = req.body;
     const isUserExists = await Users.findOne({email})
 
     if (isUserExists) {
@@ -33,7 +33,8 @@ export const createUser = async(req, res)=>{
             email, 
             password, 
             phone, 
-            address
+            address,
+            image,
         })
         res.status(201).json(user);
     }
