@@ -58,7 +58,7 @@ export const updateUser = async(req, res)=>{
         user.address = address;
        
         const updatedUsers = await user.save()
-        res.status(200).json(updatedUsers);
+        res.status(201).json(updatedUsers);
     }
    
    } catch (e) {
