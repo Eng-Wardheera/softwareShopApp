@@ -59,13 +59,18 @@ export const updateUser = async(req, res)=>{
         user.image = image;
        
         const updatedUsers = await user.save()
-        res.status(201).json(updatedUsers);
+        if (updatedUsers) {
+            res.status(201).json(updatedUsers);
+        }
+    }else{
+        res.status(404).json({message: "User Not Found...😡"})
     }
    
    } catch (e) {
     res.status(500).json({error: e.message})
    }
 }
+
 
 export const login = async(req, res)=>{
     try {
