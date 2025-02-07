@@ -46,7 +46,7 @@ export const createUser = async(req, res)=>{
 
 export const updateUser = async(req, res)=>{
    try {
-    const {name, email, password, phone, address} = req.body;
+    const {name, email, password, phone, address, image} = req.body;
     const user = await Users.findById(req.params.id)
 
     
@@ -56,6 +56,7 @@ export const updateUser = async(req, res)=>{
         user.password = password;
         user.phone = phone;
         user.address = address;
+        user.image = image;
        
         const updatedUsers = await user.save()
         res.status(201).json(updatedUsers);
