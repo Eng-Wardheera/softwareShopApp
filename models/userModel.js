@@ -29,7 +29,7 @@ const userSchema = mongoose.Schema({
     image: { 
         type: String, 
         required: true, 
-        default: ''
+        default: 'https://cdn-icons-png.freepik.com/512/8188/8188362.png'
     },
     cart: [
         {
